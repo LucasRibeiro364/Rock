@@ -1,0 +1,98 @@
+/* toda margem e preenchimento do navegador vai zerar */
+* {
+  /*margem entre as div*/
+  margin: 0;
+  /*margem entre conteúdo e a div*/
+  padding: 0;
+  /* faz com que a largura e altura de um elemento incluam a borda e o preenchimento*/
+  box-sizing: border-box;
+}
+
+body {
+  /* background-image: url(./assets/bg-mobile.jpg);*/
+  /*background-repeat: no-repeat;
+  background-position: top center;*/
+
+  /* => couver vai cobrir todo espaço da tela com a imagem*/
+  /* background-size: cover; */
+
+  /* => contain vai conter a imagem de acordo com suas especificações*/
+  /* background-size: contain;
+  width: 100vw;
+  height: 100vw; */
+
+  /*ATENÇÃO ordem para agrupar o background: color image repeat position/size;*/
+  background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+}
+
+/* seletor universal, o "*" aplica essa característica */
+body * {
+  font-family: "Inter", sans-serif;
+  color: #ffffff;
+}
+
+/* seletor de id "container" */
+#container {
+  width: 360px;
+  padding: 0 24px;
+  /* height: 712px; => comentado pq css não trabalha muito com altura */
+  /* border: 1px solid red; */
+  /* margin-right: auto; */
+  /* margin-left: auto; */
+  margin: 93px auto 0px auto;
+
+  /* display: block; => Quando um elemento é configurado com display: block;, ele é renderizado como um bloco retangular que ocupa toda a largura disponível do contêiner pai.*/
+
+  /* display: inline; => Elementos "inline" não iniciam uma nova linha e geralmente aparecem ao lado de outros elementos "inline" ou dentro de elementos "block". */
+}
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+#profile img {
+  /* display: block; */
+  width: 122px;
+  /* margin: auto; */
+  /* margin: auto; => a img por ser um elemento em inline não aceita a tag "margin: auto" com isso tenho que tranformar o seletor "profile" em display block ou chama o seletor e colocar todo seu texto no center, right ou left*/
+}
+#profile p {
+  /* espessura do negrito */
+  font-weight: 500;
+  /* altura da linha */
+  line-height: 24px;
+  /* margem superior de 8px */
+  margin-top: 8px;
+}
+
+/*links*/
+ul {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s;
+}
+
+/*pseudo-selector*/
+ul li a:hover {
+  border: 1.5px #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
